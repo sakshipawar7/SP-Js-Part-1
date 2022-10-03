@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP</title>
+    <style>
+       
+        body{
+            background-image: url("hanging.jpg");
+            background-repeat: repeat-x;
+            background-position: top;
+            background-attachment: fixed;
+            background-size: 100%;
+            font-size: 25px;
+        }
+
+        div{
+            background-color: black;
+            opacity: 60%;
+            width: 60%;
+            align-content: center;
+            border-radius: 10px 250px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .custo{
+            color: white;
+        }
+       .ipfield{
+        border-radius: 50px;
+        font-size: 18px;
+        padding: 10px;
+        background-color: black;
+        border-color: white;
+        border-width: 3px;
+        opacity: 70%;
+        color: white;
+       }
+       .ipfield:hover {
+        background-color: #eba16a;
+        }
+       .button{
+        background-color: green;
+        border-radius: 50px;
+        font-size: 21px;
+        color: white;
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 35px;
+        border-width: 3px;
+       }
+       .button:hover {
+        border-color: green;
+        background-color: transparent;
+        }
+        .button1:hover {
+        border-color: blue;
+        background-color: transparent;
+        }
+       .button1{
+        background-color: blue;
+        border-radius: 50px;
+        font-size: 21px;
+        color: white;
+        padding: 20px;
+        padding-left: 30px;
+        padding-right: 35px;
+        border-width: 3px;
+       }
+       ::placeholder{
+        color: white;
+       }
+    </style>
+    <h1 style="color:white;"; ><center>Customized <b style="color:red;">T-Shirts</b></center></h1>
+</head>
+<body >
+   
+    <div>
+    <form name="myForm" id="myForm" action="#"  enctype="multipart/form-data"
+                method="put" onsubmit="return TShirt()">
+    <table align="center" cellpadding = "10">
+        <tr><td>    <h3 style="color:#eba16a"; ><center>Customizing Section</center></h3></td></tr>
+
+        <!--------------------- Tag Line ------------------------------------------>
+        <tr>
+        <td class="custo">Tagline</td>
+        <td><input  type="text" id="tagline" class="ipfield" name="tagline" maxlength="100" placeholder="Your shirt's tagline" autocomplete="off"  />
+        <!-- (Max 100 Characters Allowed) -->
+        </td>
+        </tr>
+
+        <tr><td><span id="tagspan"></span></td></tr>
+       
+
+        <!--------------------------Size of Shirt----------------------------------->
+<tr>
+   
+    <td class="custo" required>Size of Shirt</td>
+    <td >
+    <select name="size" id="size" class="ipfield">
+    <option value="">Size</option>
+    <option value="1">XS</option>
+    <option value="2">S</option>
+    <option value="3">M</option>
+    <option value="4">L</option>
+    <option value="5">XL</option>
+    <option value="6">XXL</option>
+    <option value="7">XXXL</option>
+    </select>
+    </td>
+</tr>
+
+<tr><td><span id="tagspan2"></span></td></tr>
+
+<tr>
+<td class="custo" required><label for="colorpicker">Colour:</label></td>
+  <td><input type="color" class="ipfield" id="color" name="color" value="#800080"></td>
+</tr>
+
+<tr>
+    <td class="custo" required>Quantity</td>
+    <td><input type="text" class="ipfield" id="quantity" name="Quantity" maxlength="50" placeholder="Quantity" autocomplete="off" />
+    <!-- (Max 50 Characters Allowed) -->
+    </td>
+    </tr>
+
+    <tr>
+        <td class="custo" required>Gender</td>
+        <td class="custo" class="ipfield" id="gender">
+        <input type="radio" name="Gender" value="Male" />
+        Male
+        <input type="radio" name="Gender" value="Female" />
+        Female
+        </td>
+        </tr>
+
+    <tr><td>    <h3 style="color:#eba16a"; ><center>Contact Details</center></h3></td></tr>
+
+    <tr>
+        <td class="custo" required>First Name</td>
+        <td><input type="text" class="ipfield" id="fname" name="FirstName" maxlength="50" placeholder="John"  />
+        (Max 50 Characters Allowed)
+        </td>
+        </tr>
+       
+       
+        <!------------------------ Last Name --------------------------------------->
+        <tr>
+        <td class="custo" required>Last Name</td>
+        <td><input type="text" class="ipfield" id="lname" name="LastName" maxlength="50" placeholder="Fernandes"  autocomplete="off" />
+        (Max 50 Characters Allowed)
+        </td>
+        </tr>
+       
+        <!-------------------------- Email ID ------------------------------------->
+        <tr>
+        <td class="custo" required>Email ID</td>
+        <td><input type="email" class="ipfield" id="email" name="EmailID" maxlength="100" placeholder="abc@gmail.com" autocomplete="off" ></td>
+        </tr>
+       
+       
+       
+        <!-------------------------- Mobile Number ------------------------------------->
+        <tr>
+        <td class="custo" required>Mobile Number</td>
+        <td>
+        <input type="text" class="ipfield" id="mobile" name="MobileNumber" maxlength="10" placeholder="9820xxxxxx" autocomplete="off"  />
+        (10 Digits Allowed)
+        </td>
+        </tr>
+
+        <!------------------------- Address ---------------------------------->
+<tr>
+    <td class="custo" required>Address<br /><br /><br /></td>
+    <td><textarea name="Address" id="address" class="ipfield" rows="10" cols="50" autocomplete="off" ></textarea></td>
+    </tr>
+   
+    <!-------------------------- City ------------------------------------->
+    <tr>
+    <td class="custo" required>City</td>
+    <td><input type="text" class="ipfield" id="city" name="City" maxlength="50" placeholder="Bangalore" autocomplete="off" />
+    (Max 50 Characters Allowed)
+    </td>
+    </tr>
+   
+   
+   
+    <!----- -------------------- Pin Code-------------------------------------->
+    <tr>
+    <td class="custo">Pin Code</td>
+    <td><input type="Number" class="ipfield" id="pin" name="PinCode" maxlength="6" placeholder="560068" autocomplete="off" />
+    (Max 6 Numbers Allowed)
+    </td>
+    </tr>
+   
+   
+   
+    <!---------------------------- State ----------------------------------->
+    <tr>
+    <td class="custo">State</td>
+    <td><input type="text" class="ipfield" id="state" name="State" maxlength="50" placeholder="Maharashtra" autocomplete="off"  />
+    (Max 50 Characters Allowed)
+    </td>
+    </tr>
+   
+   
+    <!------------------------------ Country --------------------------------->
+    <tr>
+    <td class="custo">Country</td>
+    <td><input type="text" class="ipfield" id="country" name="Country" placeholder="India" autocomplete="off"  /></td>
+    </tr>
+   
+       
+        <tr><td>    <h3 style="color:#eba16a"; ><center>Delivery Section</center></h3></td></tr>
+
+    <tr>
+        <td class="custo" required>Expected Delivery</td>
+<td>
+    <input type="date"  class="ipfield" id="date" name="Date" >
+</td>
+</tr>
+
+
+<tr>
+    <td class="custo" required>Mode</td>
+    <td class="custo" class="ipfield" id="mode" name="mode">
+    <input type="radio" name="Mode" value="COD" />
+    COD
+    <input type="radio" name="Mode" value="Online" />
+    Online
+    </td>
+    </tr>
+
+
+    <tr>
+        <td class="custo" required>How will you collect order?</td>
+        <td class="custo" class="ipfield" id="collect" name="collect" >
+        <input  type="radio" name="order_collect" value="Collect from Shop" />
+        Collect from Shop
+        <input type="radio" name="order_collect" value="Deliver at your place" />
+        Deliver at your place
+        </td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+            <input class="button" type="submit" value="Submit">
+            <input class="button1" type="reset" value="Reset">
+            </td>
+            </tr>
+        </form>
+     
+</div>
+
+ <!-- <script>
+let date = document.getElementById("date");
+// let time = document.getElementById("time");
+// creating the date object and getting the date and time
+let newDate = new Date();
+let year = newDate.getFullYear();
+let month = newDate.getMonth();
+let todaySDate = newDate.getDate();
+let hours = newDate.getHours();
+let minutes = newDate.getMinutes();
+let seconds = newDate.getSeconds();
+date.innerHTML = " " + todaySDate + "/ " + month + "/ " + year;
+
+
+function validateform() {
+var tagline=document.myForm.tagline.value;
+var quantity=document.myForm.quantity.value;
+var fname=document.myForm.fname.value;
+var lname=document.myForm.lname.value;
+var address=document.myForm.address.value;
+var City=document.myForm.email.value;
+var code=document.myForm.mobile.value;
+var size=document.myForm.size.value;
+var mode=document.myForm.mode.value;
+var mobile = /^\d{10}$/;
+var mob = document.forms["myForm"]["mobile"].value;
+
+var mail=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+var email=document.forms["myForm"]["email"].value;
+
+if (tagline==""){
+alert("Tagline of the t-shirt can't be blank");
+return false;
+}
+else if (quantity==""){
+alert("Quantity of the t-shirt can't be blank");
+// return false;
+}
+else if (fname==""){
+alert("First name field can't be blank");
+// return false;
+}
+else if (lname==""){
+alert("Last name field can't be blank");
+// return false;
+}
+else if (!mob.match(mobile)){
+alert("Enter a 10 digit mobile number");
+// return false;
+}
+else if (address==""){
+alert("Address field can't be blank");
+// return false;
+}
+
+else if (size==""){
+alert("Please select a size");
+// return false;
+}
+else if (mode==""){
+alert("Please select a State");
+// return false;
+}
+else if (!email.match(mail)){
+alert("Please enter a valid email");
+// return false;
+}
+else window.print();
+}
+</script> -->
+
+<script>
+    function TShirt(){
+      const values = [
+      document.forms["myForm"]["tagline"].value,
+      document.forms["myForm"]["color"].value,
+      // document.forms["myForm"]["size"].value,
+      document.forms["myForm"]["Quantity"].value,
+      document.forms["myForm"]["Address"].value,
+      document.forms["myForm"]["City"].value,
+      document.forms["myForm"]["size"].value,
+      document.forms["myForm"]["Gender"].value,
+      document.forms["myForm"]["FirstName"].value,
+      document.forms["myForm"]["LastName"].value,
+      document.forms["myForm"]["MobileNumber"].value,
+      document.forms["myForm"]["Date"].value,
+    //   document.forms["myForm"]["mode"].value,
+     document.forms["myForm"]["order_collect"].value
+    ];
+    const hasEmptyFields = Object.values(values).some(
+      (element) => element === ""
+    );
+    if (hasEmptyFields) {
+      alert("Please fill in all fields");
+      return;
+    }
+    // Part B
+  //   document.getElementById("tagline").value = "";
+  //   var ele = document.getElementsByName("color");
+  //   for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+  //   var ele = document.getElementsByName("size");
+  //   for (var i = 0; i < ele.length; i++) ele[i].checked = true;
+  //   var ele = document.getElementsByName("sleeve");
+  //   for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+  //   var ele = document.getElementsByName("address");
+  //   for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+  //   var ele = document.getElementsByName("delivery_date");
+  //   for (var i = 0; i < ele.length; i++) ele[i].checked = false;
+  if (values[0].length > 10 || values[0].length < 3) {
+              alert(
+                  "Please enter a tagline containing between 3 and 10 characters"
+              );
+              return;
+          }
+//   document.getElementById("size")
+    const receipt_formatted = `Thank you for shopping!\nHere's your receipt:
+    Date of Generation of Reciept: ${new Date().toLocaleDateString("UK")}
+    Tagline: ${values[0]}
+    Color: ${values[1]}
+    Quantity: ${values[2]}
+    Address: ${values[3]}
+    City: ${values[4]}
+    Size: ${values[5]}
+    Gender: ${values[6]}
+    First name: ${values[7]}
+    Last name: ${values[8]}
+    Mobile: ${values[9]}
+    Date of Delivery: ${values[10]}
+    How will you Collect?: ${values[11]}`;
+    confirm(receipt_formatted);
+    
+  }
+  const form = document.getElementById("myForm");
+  if(form){
+        form.addEventListener("submit", (event) => {
+    // stop form submission
+    event.preventDefault();
+  });
+  }
+
+
+  </script>
+</html>
+
+
+</body>
+
+
+</html>
